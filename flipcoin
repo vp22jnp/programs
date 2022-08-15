@@ -1,0 +1,42 @@
+flipcoin combination use case3 ->
+#! /bin/bash -x
+
+echo "Welcome to flip coin combination"
+read -p "" 
+
+IS_HEAD=1
+counter=0
+headCount=0
+tailCount=0
+
+read -p "How many times you want to flip coin? " noOfTime
+
+while [ $counter -lt $noOfTime ]
+do
+
+	flipCoinResult=$((RANDOM%2))
+	echo $flipCoinResult
+
+	if [ $flipCoinResult -eq $IS_HEAD ]
+	then
+		echo "Head"
+		flipCoin[$counter]="Head"
+		#headCount=$headCount+1
+		((headCount++))
+	else
+		echo "Tail"
+		#flipCoin[$counter]="Tail"
+		((tailCount++))
+	fi
+	(
+((counter++))
+done
+
+#percentage of head
+percentageOfHead=$((($headCount)*100/$noOfTime))
+echo "Percentage of head" $percentageOfHead
+
+#percentage of tail
+percentageOfTail=$((100-$percentageOfHead))
+echo "Percentage of tail " $percentageOfTail
+echo "percentage of head "

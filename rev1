@@ -1,0 +1,16 @@
+#!/bin/bash -x
+read -p "Enter any number: " actual_number
+number=$actual_number
+reverse=0
+while [ $number -ne 0 ]
+do 
+    n=`expr $number % 10`
+reverse=$((($reverse * 10) + $n))
+number=`expr $number / 10`
+done
+if [ $reverse -eq $actual_number ]
+then 
+echo "$actual_number is a palindrome"
+else
+echo "$actual_numver is not palindrome"
+fi

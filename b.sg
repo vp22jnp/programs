@@ -1,0 +1,7 @@
+#!/bin/bash -x
+
+for (( text=10; text<=100; text++ ))
+do
+echo "$text"
+done
+
